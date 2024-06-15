@@ -1,3 +1,18 @@
+export type Card = {
+  verse: string;
+  body: string;
+  time: string; // Card creation time
+  prev: string | null; // Last time Card was tested
+  book: Book;
+  chapter: number;
+  category: string[];
+  keywords: string[];
+  notes: string[];
+  mastery: number;
+  attempts: number;
+  correct: number;
+};
+
 export enum Book {
   "Genesis" = 50,
   "Exodus" = 40,
