@@ -1,9 +1,17 @@
+export type User = {
+  streak: number;
+  longestStreak: number;
+  cards: Card[];
+  attempts: number; // Resets every day
+  lastLogin: string; // Last Login Date
+};
+
 export type Card = {
   verse: string;
   body: string;
   time: string; // Card creation time
   prev: string | null; // Last time Card was tested
-  book: Book;
+  book: OldTestament | NewTestament;
   chapter: number;
   category: string[];
   keywords: string[];
@@ -13,7 +21,12 @@ export type Card = {
   correct: number;
 };
 
-export enum Book {
+export enum modeType {
+  "Practice",
+  "Test",
+}
+
+export enum OldTestament {
   "Genesis" = 50,
   "Exodus" = 40,
   "Leviticus" = 27,
@@ -53,6 +66,9 @@ export enum Book {
   "Haggai" = 2,
   "Zechariah" = 14,
   "Malachi" = 4,
+}
+
+export enum NewTestament {
   "Matthew" = 28,
   "Mark" = 16,
   "Luke" = 24,
