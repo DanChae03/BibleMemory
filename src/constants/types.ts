@@ -3,20 +3,21 @@ export type User = {
   longestStreak: number;
   cards: Card[];
   attempts: number; // Resets every day
-  lastLogin: string; // Last Login Date
+  lastLogin: string; // Last Login Date, for streaks
 };
 
 export type Card = {
+  id: string;
   verse: string;
   body: string;
   time: string; // Card creation time
   prev: string | null; // Last time Card was tested
   book: OldTestament | NewTestament;
   chapter: number;
+  verseNumber: number;
   category: string[];
-  keywords: string[];
   notes: string[];
-  mastery: number;
+  mastery: number; // Mastery from 1 to 5
   attempts: number;
   correct: number;
 };
